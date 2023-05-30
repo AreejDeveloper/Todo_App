@@ -37,19 +37,20 @@ const TodoItem = ({ todo, onDelete, onUpdate}) => {
 
       <Modal show={showModal} onHide={() => setShowModal(false)}>
         <Modal.Header closeButton>
-          <Modal.Title>Update Todo</Modal.Title>
+          <Modal.Title className=''>Update Todo</Modal.Title>
         </Modal.Header>
         <Modal.Body>
           <div>
-            <label>Title:</label>
+            <label className='me-2'>Title:</label>
             <input
               type='text'
               value={updatedTitle}
+              className='ms-2'
               onChange={(event) => setUpdatedTitle(event.target.value)}
             />
-          </div>
+          </div><br/>
           <div>
-            <label>Detail:</label>
+            <label className='me-2'>Detail:</label>
             <input
               type='text'
               value={updatedDetail}
@@ -58,12 +59,14 @@ const TodoItem = ({ todo, onDelete, onUpdate}) => {
           </div>
         </Modal.Body>
         <Modal.Footer>
+          <div className='d-flex justify-content-center align-items-center b'>
           <Button variant='secondary' onClick={() => setShowModal(false)}>
             Cancel
           </Button>
-          <Button variant='primary' onClick={handleUpdate}>
-            Save Changes
+          <Button variant='primary ms-4 me-4' onClick={handleUpdate}>
+            Update
           </Button>
+          </div>
         </Modal.Footer>
       </Modal>
     </div>

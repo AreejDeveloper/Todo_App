@@ -67,6 +67,7 @@ function App() {
     const updatedTodo = updatedTodos.splice(updatedTodoIndex, 1)[0];
     updatedTodos.unshift(updatedTodo);
   }
+  
 
   setTodos(updatedTodos);
 };
